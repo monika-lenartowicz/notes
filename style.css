@@ -6,4 +6,117 @@
 
 body {
 	font-family: "Montserrat", sans-serif;
+	height: 100vh;
+	background-color: rgb(243, 243, 243);
+}
+
+.menu {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 40px;
+	min-height: 120px;
+}
+
+button {
+	padding: 12px 25px;
+	background: none;
+	border: 1px solid #999;
+	border-radius: 5px;
+	font-size: 14px;
+	cursor: pointer;
+	transition: background-color 0.3s, color 0.3s;
+}
+
+button:hover {
+	background-color: #333;
+	color: white;
+}
+
+.deleteNote {
+	padding: 0;
+	background: none;
+	font-size: 20px;
+	border: none;
+	cursor: pointer;
+}
+
+.deleteNote:hover {
+	background: none;
+	color: rgb(120, 115, 115);
+}
+
+.icon {
+	margin-right: 10px;
+}
+
+.noteArea {
+	display: flex;
+	align-items: start;
+	flex-wrap: wrap;
+	padding: 20px;
+}
+
+.note {
+	margin: 40px 20px;
+	width: 240px;
+	background-color: yellow;
+	border: 1px solid blue;
+	border-radius: 5px;
+}
+
+.noteHeader {
+	display: flex;
+	justify-content: space-between;
+	text-align: center;
+	padding: 20px;
+	background-color: rgba(0, 0, 0, 0.06);
+}
+
+.noteBody {
+	padding: 20px 15px;
+	font-size: 15px;
+}
+
+.notePanel {
+	display: none;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	padding: 20px 20px;
+	width: 370px;
+	border-radius: 8px;
+	background-color: #fff;
+	box-shadow: 0 0 10px blue;
+	min-height: 60%;
+}
+
+.notePanel__header {
+	margin-bottom: 20px;
+	text-transform: uppercase;
+}
+
+.notePanel__label {
+	margin-bottom: 10px;
+}
+
+.notePanel__select,
+.notePanel__textArea {
+	margin-bottom: 20px;
+	padding: 10px 20px;
+	width: 100%;
+	max-width: 90%;
+	max-height: 500px;
+	font-size: 16px;
+	border: 1px solid black;
+}
+
+.norePanel__error {
+	margin-bottom: 20px;
+	color: tomato;
+	visibility: hidden;
 }
