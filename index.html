@@ -38,7 +38,7 @@
                 <h2 class="noteTitle">Notatka #1</h2>
                 <button class="deleteNote">
                     <i class="fas fa-times icon"></i>
-                    Usuń
+
                 </button>
             </div>
             <div class="noteBody"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quaerat voluptate
@@ -50,21 +50,21 @@
 
     <div class="notePanel">
         <h3 class="notePanel__header">Dodaj notatkę</h3>
-        <label for="category">Wybierz kategorię</label>
-        <select name="" id="category">
+        <label class="notePanel__label" for="category">Wybierz kategorię</label>
+        <select class="notePanel__select" id="category">
             <option value="0" disabled selected>- Wybierz kategorię -</option>
             <option value="1">Zakupy</option>
             <option value="1">Praca</option>
             <option value="1">Relaks</option>
             <option value="1">Inne</option>
         </select>
-        <label for="text">Wpisz treść notatki</label>
-        <textarea id="text"></textarea>
+        <label class="notePanel__label" for="text">Wpisz treść notatki</label>
+        <textarea class="notePanel__textArea" id="text"></textarea>
 
-        <p class="error">Uzupełnij wszystkie pola!</p>
+        <p class="norePanel__error">Uzupełnij wszystkie pola!</p>
         <div class="panelButton">
-            <button class="save icon">Zapisz <i class="fas fa-save"></i></button>
-            <button class="cancel icon">Anuluj <i class="far fa-window-close"></i></button>
+            <button class="save icon"> <i class="fas fa-save"></i> Zapisz</button>
+            <button class="cancel icon"><i class="far fa-window-close"></i> Anuluj</button>
         </div>
     </div>
 </body>
