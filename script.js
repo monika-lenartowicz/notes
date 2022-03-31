@@ -26,5 +26,41 @@ const closePanel = () => {
 	category.selectedIndex = 0;
 };
 
+const addNote = () => {
+	if (textArea.value !== "" && category.options[category.selectedIndex].value !== "0") {
+		createNote();
+		error.style.visibility = "hidden";
+	} else {
+		error.style.visibility = "visible";
+	}
+};
+
+const createNote = () => {
+	const newNote = document.createElement("div");
+	newNote.classList.add("note");
+	newNote.setAttribute = ("id", cardId);
+
+	newNote.innerHTML = `
+		<div class="noteHeader">
+					<h2 class="noteTitle">${selectedValue}</h2>
+			<button class="deleteNote">
+			<i class="fas fa-times icon"></i>
+			</button>
+		</div>
+		<div class="noteBody"> ${textArea.value}
+		</div>`;
+
+	noteArea.appendChild(newNote);
+	cardId++;
+	textArea.value = "";
+	category.selectedIndex = 0;
+	closePanel();
+};
+
+const selectValue = () => {
+	selectedValue = category.options[category.selectedIndex].text;
+};
+
 addButton.addEventListener("click", showPanel);
 cancelButton.addEventListener("click", closePanel);
+saveButton.addEventListener("click", addNote);
