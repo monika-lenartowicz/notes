@@ -33,7 +33,7 @@
     </div>
 
     <div class="noteArea">
-        <div class="note">
+        <!-- <div class="note">
             <div class="noteHeader">
                 <h2 class="noteTitle">Notatka #1</h2>
                 <button class="deleteNote">
@@ -45,13 +45,13 @@
                 quasi, nihil vero ullam similique ab facere minima veniam libero mollitia debitis porro, ipsa itaque
                 quis aut, nobis tenetur?
             </div>
-        </div>
+        </div> -->
     </div>
 
     <div class="notePanel">
         <h3 class="notePanel__header">Dodaj notatkę</h3>
         <label class="notePanel__label" for="category">Wybierz kategorię</label>
-        <select class="notePanel__select" id="category">
+        <select class="notePanel__select" id="category" onchange="selectValue()">
             <option value="0" disabled selected>- Wybierz kategorię -</option>
             <option value="1">Zakupy</option>
             <option value="1">Praca</option>
