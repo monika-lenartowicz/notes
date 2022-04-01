@@ -1,6 +1,7 @@
 const addButton = document.querySelector(".add");
 const removeAllButton = document.querySelector(".deleteAll");
 const deleteNoteButtons = document.getElementsByClassName(".deleteNote");
+
 const saveButton = document.querySelector(".save");
 const cancelButton = document.querySelector(".cancel");
 
@@ -38,12 +39,12 @@ const addNote = () => {
 const createNote = () => {
 	const newNote = document.createElement("div");
 	newNote.classList.add("note");
-	newNote.setAttribute = ("id", cardId);
+	newNote.setAttribute("id", cardId);
 
 	newNote.innerHTML = `
 		<div class="noteHeader">
 					<h2 class="noteTitle">${selectedValue}</h2>
-			<button class="deleteNote">
+			<button class="deleteNote" onclick="removeNote(${cardId})">
 			<i class="fas fa-times icon"></i>
 			</button>
 		</div>
@@ -55,10 +56,33 @@ const createNote = () => {
 	textArea.value = "";
 	category.selectedIndex = 0;
 	closePanel();
+	checkColor(newNote);
 };
 
 const selectValue = () => {
 	selectedValue = category.options[category.selectedIndex].text;
+};
+
+const checkColor = note => {
+	switch (selectedValue) {
+		case "Zakupy":
+			note.style.backgroundColor = "rgb(72,255,0)";
+			break;
+		case "Praca":
+			note.style.backgroundColor = "rgb(255, 243, 0)";
+			break;
+		case "Relaks":
+			note.style.backgroundColor = "rgb(224, 124, 171)";
+			break;
+		case "Inne":
+			note.style.backgroundColor = "rgb(0, 170,255)";
+			break;
+	}
+};
+
+const removeNote = id => {
+	const noteToDelete = document.getElementById(id);
+	noteArea.removeChild(noteToDelete);
 };
 
 addButton.addEventListener("click", showPanel);
